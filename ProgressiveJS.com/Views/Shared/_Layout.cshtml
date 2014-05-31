@@ -1,0 +1,24 @@
+﻿@{
+    var controller = ViewContext.RouteData.Values["controller"].ToString().ToLower();
+    var action = ViewContext.RouteData.Values["action"].ToString().ToLower();
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - ProgressiveJS.com</title>
+    @Styles.Render("~/content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body id="@controller-@action" class="@controller">
+    @{ Html.RenderPartial("_Nav"); }
+
+    @RenderBody()
+
+    @{ Html.RenderPartial("_Footer"); }
+
+    @Scripts.Render("~/bundles/libs")
+    @Scripts.Render("~/bundles/app")
+</body>
+</html>

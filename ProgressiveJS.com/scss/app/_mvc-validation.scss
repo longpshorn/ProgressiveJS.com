@@ -1,0 +1,18 @@
+﻿
+.field-summary-errors {
+}
+
+input.input-validation-error,
+input:focus.input-validation-error {
+    margin-bottom:0;
+    border-color: #f04124;
+    box-shadow: 0 0 5px #f04124;
+}
+
+.field-validation-error {
+    background: #f04124;
+    color: white;
+    padding: .5em;
+    display: block;
+    margin-bottom: 1em;
+}

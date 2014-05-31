@@ -1,0 +1,20 @@
+﻿// update all elements with an [id] attribute to account
+// for the fixed navbar
+/*[id]:not(fieldset) {
+    padding-top: rem-calc(45);
+    margin-top: rem-calc(-45);
+}*/
+/*fieldset[id] {
+    padding-top: 0;
+    margin-top: 0;
+}*/
+
+// update the body (since it also has an [id] attribute
+// to remove the margin previously applied
+body[id] {
+    margin-top: 0;
+
+    &.foundation {
+        padding-top: 0;
+    }
+}
