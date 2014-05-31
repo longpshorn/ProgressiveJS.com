@@ -4994,4 +4994,5 @@ input.input-validation-error, input:focus.input-validation-error {
   color: white;
   padding: 0.5em;
   display: block;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  box-shadow: 0 0 5px #f04124; }

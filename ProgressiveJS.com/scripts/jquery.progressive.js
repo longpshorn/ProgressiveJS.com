@@ -112,7 +112,7 @@
         },
 
         // progressive js status code enum
-        pjsStatusCode = {
+        pjsStatus = {
             _default: 'Default',
             success: 'Success',
             warning: 'Warning',
@@ -228,7 +228,7 @@
         for (; i < ii; i++)
             opts.successes[i].apply($context, [response, textStatus, jqXhr || this.form, this.form]);
 
-        if (response.statusCode == pjsStatusCode.redirect && opts.locationOnSuccess !== null)
+        if (response.statusCode == pjsStatus.redirect && opts.locationOnSuccess !== null)
             window.location = opts.locationOnSuccess;
     }
 
@@ -366,7 +366,7 @@
             }
         },
 
-        status: pjsStatusCode
+        status: pjsStatus
     }
 
     $(function () {

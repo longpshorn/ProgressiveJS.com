@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
-using ProgressiveJS.Extensions;
-using ProgressiveJS.Server;
+using ProgressiveJS.Data;
+using ProgressiveJS.UX;
 using ProgressiveJS.com.Models;
 using System.Threading;
 
@@ -34,13 +34,13 @@ namespace ProgressiveJS.com.Controllers
             var isAjax = Request.IsAjaxRequest();
 
             var status = isAjax
-                ? Enums.MessageStatus.Default
-                : Enums.MessageStatus.Warning;
+                ? ProgressiveStatus.Default
+                : ProgressiveStatus.Warning;
             var msg = !isAjax
                 ? "Regular HTML forms can make for a bit of a jarring user experience."
                 : "Progressively enhancing your forms makes your pages easier to use!";
 
-            var response = this.RenderAlert(status, msg);
+            var response = this.RenderProgressiveAlert(status, msg);
             if (isAjax)
                 return new ProgressiveResult(response);
 
@@ -55,7 +55,7 @@ namespace ProgressiveJS.com.Controllers
                 ? string.Empty
                 : string.Format(", {0}", model.ToString());
             var msg = string.Format("Hello{0}! Did you know that ajax could be this easy?", msgName);
-            var response = this.RenderAlert(Enums.MessageStatus.Default, msg);
+            var response = this.RenderProgressiveAlert(ProgressiveStatus.Default, msg);
             if (Request.IsAjaxRequest())
                 return new ProgressiveResult(response);
 
