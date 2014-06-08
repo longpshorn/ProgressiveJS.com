@@ -1,0 +1,29 @@
+﻿<p>
+    The typical pattern for HTML development consists of the "POST-REDIRECT-GET" pattern.
+    While there is nothing technically wrong with this pattern, it can make for a poor user experience.
+    When you click the button below, you will notice the full-page postback.
+</p>
+
+<div class="row">
+    <div class="small-12 columns">
+        <fieldset>
+            <legend>Standard HTML Form</legend>
+
+<pre class="prettyprint"><code>
+&lt;form action="/Home/SingleButtonForm" method="post"&gt;
+    &lt;div class="pjs-response"&gt;
+        @@ProgressiveAlert.Render(TempData)
+    &lt;/div&gt;
+    &lt;button class="button small" type="submit"&gt;Click me&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre><br />
+
+            @using (Html.BeginForm("SingleButtonForm", "Home"))
+            {
+                <div class="pjs-response">@ProgressiveAlert.Render(TempData)</div>
+                <button class="button small" type="submit">Click me</button>
+            }
+        </fieldset>
+    </div>
+</div>

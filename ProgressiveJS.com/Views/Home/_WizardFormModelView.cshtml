@@ -1,0 +1,11 @@
+﻿@model WizardFormModel
+
+@{
+    var step1 = new WizardFormModel(1);
+}
+
+<div class="step-@step1.Step">
+    @Html.LabelFor(x => step1.Step)
+    @Html.DisplayFor(x => step1.Step)
+    @Html.Partial("_DemoFormModelView", Model)
+</div>

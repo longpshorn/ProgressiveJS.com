@@ -133,6 +133,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\DataFormModel.cs" />
+    <Compile Include="Models\WizardFormModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -540,6 +541,12 @@
     <Content Include="scss\app\_prettify-code-themes.scss" />
     <Content Include="Views\Home\_DataFormModelView.cshtml" />
     <Content Include="scss\app\_mvc-validation.scss" />
+    <Content Include="Views\Home\_DemoSideNav.cshtml" />
+    <Content Include="Views\Home\_DemoStandardHTMLForm.cshtml" />
+    <Content Include="Views\Home\_DemoBasicProgressiveForm.cshtml" />
+    <Content Include="Views\Home\_DemoProgressiveDataForm.cshtml" />
+    <Content Include="Views\Home\_DemoProgressiveWizard.cshtml" />
+    <Content Include="Views\Home\_WizardFormModelView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

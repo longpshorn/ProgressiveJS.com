@@ -1,0 +1,22 @@
+﻿<p>
+    Multi-step wizard pattern
+</p>
+
+<div class="row">
+    <div class="small-12 columns">
+        <fieldset id="simple-form">
+            <legend>Multi-step wizards</legend>
+
+<pre class="prettyprint"><code>
+
+</code></pre>
+
+            @using (Html.BeginForm("WizardForm", "Home", FormMethod.Post, new { data_pjs_form = new ProgressiveForm(globalTarget: false, resetForm: false).ToJson() }))
+            {
+                <div class="pjs-response"></div>
+                @Html.Partial("_WizardFormModelView", new WizardFormModel())
+                <button class="button small" type="submit">Submit</button>
+            }
+        </fieldset>
+    </div>
+</div>
