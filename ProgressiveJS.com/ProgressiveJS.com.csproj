@@ -44,9 +44,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.6.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ProgressiveJS, Version=0.0.1.19, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="ProgressiveJS, Version=0.0.1.20, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\ProgressiveJs.0.0.1.19\lib\net45\ProgressiveJS.dll</HintPath>
+      <HintPath>..\packages\ProgressiveJs.0.0.1.20\lib\net45\ProgressiveJS.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />

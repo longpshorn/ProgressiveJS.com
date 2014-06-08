@@ -44,10 +44,8 @@
 
 <pre class="prettyprint"><code>
 &lt;form action="/Home/SingleButtonForm" method="post"&gt;
-    &lt;div class="pjs-response"&gt;
-        @@ProgressiveAlert.Render(TempData)
-    &lt;/div&gt;
-    &lt;button class="button small" type="submit"&gt;Click me&lt;/button&gt;
+  &lt;div class="pjs-response"&gt;@@ProgressiveAlert.Render(TempData)&lt;/div&gt;
+  &lt;button class="button small" type="submit"&gt;Click me&lt;/button&gt;
 &lt;/form&gt;
 </code>
 </pre><br />
@@ -70,19 +68,17 @@
 
 <pre class="prettyprint"><code>
 &lt;form action="/Home/SingleButtonForm" method="post"
-    data-pjs-form="{
-        'target':'.pjs-response',
-        'globalTarget':false,
-        'resetForm':true,
-        'clearForm':false,
-        'locationOnSuccess':null,
-        'additionalFields':null,
-        'callbacks':[]
-    }"&gt;
-    &lt;div class="pjs-response"&gt;
-        @@ProgressiveAlert.Render(TempData)
-    &lt;/div&gt;
-    &lt;button class="button small" type="submit"&gt;Click me&lt;/button&gt;
+  data-pjs-form="{
+    'target':'.pjs-response',
+    'globalTarget':false,
+    'resetForm':true,
+    'clearForm':false,
+    'locationOnSuccess':null,
+    'additionalFields':null,
+    'callbacks':[]
+  }"&gt;
+  &lt;div class="pjs-response"&gt;@@ProgressiveAlert.Render(TempData)&lt;/div&gt;
+  &lt;button class="button small" type="submit"&gt;Click me&lt;/button&gt;
 &lt;/form&gt;
 </code>
 </pre><br />
@@ -105,7 +101,7 @@
 
         <p>
             It will probably be pretty rare that you just have a single button on a form. So, maybe you would like to send some data back to the server and get that (or something else) as a response.
-            While we are at it, we might as well add some validation to the form as well. ProgressiveJS works out of the box with the jquery.validate and jquery.validate.unobtrusive plugins if you are so inclined.
+            While we are at it, we might as well add some validation to the form as well. ProgressiveJS works with the jquery.validate and jquery.validate.unobtrusive plugins which make validation easy.
         </p>
 
         <div class="row">
@@ -115,31 +111,25 @@
 
 <pre class="prettyprint"><code>
 &lt;form action="/Home/DataForm" method="post"
-    data-pjs-form="@@(
-        new ProgressiveForm(
-            globalTarget: false,
-            resetForm: false
-        )
-        .ToJson()
-    )"&gt;
-    &lt;div class="pjs-response"&gt;&lt;/div&gt;
-    &lt;label for="FirstName"&gt;First Name&lt;/label&gt;
-    &lt;input id="FirstName" name="FirstName" type="text" value=""
-           data-val="true"
-           data-val-required="Your first name is required."&gt;
-    &lt;span  class="field-validation-valid"
-           data-valmsg-for="FirstName"
-           data-valmsg-replace="true"&gt;&lt;/span&gt;
-    &lt;label for="LastName"&gt;Last Name&lt;/label&gt;
-    &lt;input id="LastName" name="LastName" type="text" value=""&gt;
-    &lt;span  class="field-validation-valid"
-           data-valmsg-for="LastName"
-           data-valmsg-replace="true"&gt;&lt;/span&gt;
-    &lt;button class="button small" type="submit"&gt;Submit&lt;/button&gt;
+  data-pjs-form="@@(new ProgressiveForm(globalTarget: false, resetForm: false))"&gt;
+  &lt;div class="pjs-response"&gt;&lt;/div&gt;
+  &lt;label for="FirstName"&gt;First Name&lt;/label&gt;
+  &lt;input id="FirstName" name="FirstName" type="text" value=""
+         data-val="true"
+         data-val-required="Your first name is required."&gt;
+  &lt;span  class="field-validation-valid"
+         data-valmsg-for="FirstName"
+         data-valmsg-replace="true"&gt;&lt;/span&gt;
+  &lt;label for="LastName"&gt;Last Name&lt;/label&gt;
+  &lt;input id="LastName" name="LastName" type="text" value=""&gt;
+  &lt;span  class="field-validation-valid"
+         data-valmsg-for="LastName"
+         data-valmsg-replace="true"&gt;&lt;/span&gt;
+  &lt;button class="button small" type="submit"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
 </code></pre>
 
-                    @using (Html.BeginForm("DataForm", "Home", FormMethod.Post, new { data_pjs_form = new ProgressiveForm(globalTarget: false, resetForm: false).ToJson() }))
+                    @using (Html.BeginForm("DataForm", "Home", FormMethod.Post, new { data_pjs_form = new ProgressiveForm(globalTarget: false, resetForm: false) }))
                     {
                         <div class="pjs-response"></div>
                         @Html.Partial("_DataFormModelView", new ProgressiveJS.com.Models.DataFormModel())
@@ -148,8 +138,9 @@
                 </fieldset>
 
                 <p>
-                    Here, you will notice the use of the congifuration helper mentioned above. In this case, we created a ProgressiveForm object and then we serialized that to the Json configuration string.
-                    The Json string rendered will be similar to the configuration string you saw previously but with the options for globalTarget and resetForm set to false.
+                    In this example, you will also notice the use of the congifuration helper mentioned before. In this case, we created a ProgressiveForm object and then we serialized that to the
+                    Json configuration string. The Json string rendered will be similar to the configuration string you saw previously but with the options for globalTarget and resetForm set to
+                    false.
                 </p>
 
 
