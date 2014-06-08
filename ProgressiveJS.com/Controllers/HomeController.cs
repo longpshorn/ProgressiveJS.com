@@ -63,6 +63,14 @@ namespace ProgressiveJS.com.Controllers
             return RedirectToAction("Demo");
         }
 
+        [HttpPost]
+        public ActionResult WizardForm(WizardFormModel model)
+        {
+
+
+            return null;
+        }
+
         public ActionResult FAQs()
         {
             return View();

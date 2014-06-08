@@ -1,0 +1,37 @@
+﻿<p>ProgressiveJS gives you a quick and easy way to progressively enhance your HTML forms. Try clicking the button in the form below to see ProgressiveJS in action.</p>
+
+<div class="row">
+    <div class="small-12 columns">
+        <fieldset id="simple-form">
+            <legend>Simple ProgressiveJS Form</legend>
+
+<pre class="prettyprint"><code>
+&lt;form action="/Home/SingleButtonForm" method="post"
+  data-pjs-form="{
+    'target':'.pjs-response',
+    'globalTarget':false,
+    'resetForm':true,
+    'clearForm':false,
+    'locationOnSuccess':null,
+    'additionalFields':null,
+    'callbacks':[]
+  }"&gt;
+  &lt;div class="pjs-response"&gt;@@ProgressiveAlert.Render(TempData)&lt;/div&gt;
+  &lt;button class="button small" type="submit"&gt;Click me&lt;/button&gt;
+&lt;/form&gt;
+</code>
+</pre><br />
+
+            @using (Html.BeginForm("SingleButtonForm", "Home", FormMethod.Post, new { data_pjs_form = new ProgressiveForm(globalTarget: false).ToJson() }))
+            {
+                <div class="pjs-response">@ProgressiveAlert.Render(TempData)</div>
+                <button class="button small" type="submit">Click me</button>
+            }
+        </fieldset>
+    </div>
+</div>
+
+<p>
+    Of special note is the data-pjs-form attribute which includes the specific configuration for this ProgressiveJS form. The configuration for any ProgressiveJS element can be provided via a Json
+    configuration string as is done here. ProgressiveJS also gives you some helpers to make creating these configurations a lot easier. More about that below.
+</p>
